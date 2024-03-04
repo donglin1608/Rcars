@@ -28,3 +28,31 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+#visualize the speed and distance data
+plot(speed ~ dist, data = cars)
+```
+
+```{r}
+#fit a linear model to the data
+model <- lm(speed ~ dist, data = cars)
+summary(model)
+```
+
+```{r}
+#visualize the linear model
+plot(speed ~ dist, data = cars)
+abline(model)
+```
+
+```{r}
+#visualize the data with histogram
+hist(cars$speed)
+```
+
+```{r}
+
+```
+
+```{r}
