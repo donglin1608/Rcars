@@ -1,5 +1,5 @@
 ---
-title: "speed-and-distance-n"
+title: "Template data visualization items in R"
 author: "Donglin Xiong"
 date: "`r Sys.Date()`"
 output: html_document
@@ -12,39 +12,33 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #Histogram of speed
 ```{r cars}
-#histogram of speed
+
 hist(cars$speed)
 
-#label histogram 
 hist(cars$speed, main = "Histogram of Speed", xlab = "Speed", ylab = "Frequency", col = "lightblue", border = "black")
 
 ```
 
 #Boxplot of speed
 ```{r cars}
-#boxplot of speed
 boxplot(cars$speed)
-#customize the boxplot
 boxplot(cars$speed, main = "Boxplot of Speed", xlab = "Speed", col = "orange", border = "black")
 ```
 
 #Bar Charts
 
 ```{r}
-#create bar chart to display frequency of speed
 barplot(table(cars$speed), main = "Bar Chart of Speed", xlab = "Speed", ylab = "Frequency", col = "lightgreen", border = "black")
 
 ```
 
 #Line Graphs
 ```{r}
-#create line graph to visualize a time-series data
 plot(cars$speed, type = "l", col = "blue", lwd = 2, main = "Line Graph of Speed", xlab = "Time", ylab = "Speed")
 ```
 #Aran chart
 
 ```{r}
-#Create an area chart to represent the cumulative frequency of speed over time
 plot(cumsum(cars$speed), type = "s", col = "red", lwd = 2, main = "Area Chart of Speed", xlab = "Time", ylab = "Cumulative Speed")
 
 
@@ -52,20 +46,17 @@ plot(cumsum(cars$speed), type = "s", col = "red", lwd = 2, main = "Area Chart of
 #Scatterplot
 
 ```{r}
-#Create a scatterplot to explore the relationship between speed and distance
 plot(cars$speed, cars$dist, main = "Scatterplot of Speed and Distance", xlab = "Speed", ylab = "Distance", col = "purple", pch = 19)
 ```
 #Pie Chart
 
 ```{r}
-#Create a pie chart to visualize the composition of a categorical variable, labels and percentages for each slice.
 pie(table(cars$speed), main = "Pie Chart of Speed", col = rainbow(length(table(cars$speed))), labels = paste(names(table(cars$speed)), ":", table(cars$speed)), cex = 0.8)
 
 
 ```
 #Heat Maps
 ```{r}
-#Create a heat map to visualize the intensity of speed and distance, color intensity represents the magnitude of the value, labels for rows and columns.
 heatmap(cars, main = "Heat Map of Speed and Distance", xlab = "Speed", ylab = "Distance", col = heat.colors(12), scale = "column", margins = c(5,10))
 
 ```
