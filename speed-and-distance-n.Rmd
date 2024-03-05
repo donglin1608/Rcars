@@ -56,9 +56,8 @@ pie(table(cars$speed), main = "Pie Chart of Speed", col = rainbow(length(table(c
 
 ```
 #Heat Maps
+#In fact, the x needs to be numberic matrix so that could form a heat map
 ```{r}
 heatmap(cars, main = "Heat Map of Speed and Distance", xlab = "Speed", ylab = "Distance", col = heat.colors(12), scale = "column", margins = c(5,10))
 
 ```
-
-```{r}
